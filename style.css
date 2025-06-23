@@ -110,3 +110,43 @@ footer {
   color: #555;
   margin-top: 60px;
 }
+
+/* Swiper override: näytä painikkeet */
+.swiper {
+  padding-bottom: 60px;
+  position: relative;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0066cc;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  top: 35%;
+  transition: background 0.3s ease;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #d0e6ff;
+}
+
+/* Hover-efekti korteille */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lisää selkeyttä slider-osioon */
+.slider-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Varmistetaan että painikkeet näkyvät kaiken päällä */
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+  z-index: 10;
+}
