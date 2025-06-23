@@ -19,7 +19,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" data-color="#eaf3fc">
     <div class="hero-content">
       <h1><span>Luon</span> itselleni tulevaisuuden portfolion</h1>
       <p>Tämä on oma pieni verkkonäyttelyni. Kokeilen, opin ja kehityn.</p>
@@ -31,7 +31,7 @@
   </section>
 
   <!-- Projektit slider -->
-  <section class="slider-section" id="projektit">
+  <section class="slider-section" id="projektit" data-color="#ffffff">
     <h2>Projektini</h2>
     <div class="swiper">
       <div class="swiper-wrapper">
@@ -97,6 +97,21 @@
         1024: { slidesPerView: 3 }
       }
     });
+
+    // Scroll background effect
+    const sections = document.querySelectorAll("section[data-color]");
+    const body = document.body;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const color = entry.target.getAttribute("data-color");
+          body.style.backgroundColor = color;
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
