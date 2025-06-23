@@ -5,17 +5,21 @@
   <title>Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
+
+  <!-- Navigaatio -->
   <header class="navbar">
     <nav>
-      <a href="index.html">Etusivu</a>
-      <a href="about.html">Tietoa minusta</a>
+      <a href="#hero">Etusivu</a>
       <a href="#projektit">Projektit</a>
+      <a href="about.html">Tietoa minusta</a>
     </nav>
   </header>
 
-  <section class="hero">
+  <!-- Hero -->
+  <section class="hero" id="hero">
     <div class="hero-content">
       <h1><span>Luon</span> itselleni tulevaisuuden portfolion</h1>
       <p>Tämä on oma pieni verkkonäyttelyni. Kokeilen, opin ja kehityn.</p>
@@ -26,34 +30,73 @@
     </div>
   </section>
 
-  <main>
-    <section id="projektit">
-      <h2>Projektit</h2>
-      <div class="slider-container">
-        <button class="slider-btn left" onclick="scrollSlider(-1)">←</button>
-        <div class="slider" id="projectSlider">
-          <div class="projekti"><h3>Projekti 1</h3><p>Lyhyt kuvaus projektista.</p></div>
-          <div class="projekti"><h3>Projekti 2</h3><p>Toinen esimerkki projekti.</p></div>
-          <div class="projekti"><h3>Projekti 3</h3><p>Lisää oma projektisi tähän.</p></div>
+  <!-- Projektit slider -->
+  <section class="slider-section" id="projektit">
+    <h2>Projektini</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200/000000/ffffff?text=Projekti+1" alt="">
+            <div class="card-info">
+              <h3>Projekti 1</h3>
+              <p>Verkkosivujen konsepti</p>
+            </div>
+          </div>
         </div>
-        <button class="slider-btn right" onclick="scrollSlider(1)">→</button>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200/444444/ffffff?text=Projekti+2" alt="">
+            <div class="card-info">
+              <h3>Projekti 2</h3>
+              <p>Käyttöliittymäsuunnittelu</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200/777777/ffffff?text=Projekti+3" alt="">
+            <div class="card-info">
+              <h3>Projekti 3</h3>
+              <p>Prototyypin kehitys</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+      <!-- Nuolet -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <!-- Sivupallot -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 [Nimesi]</p>
+    <p>&copy; 2025 Oma Portfolio</p>
   </footer>
 
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    function scrollSlider(direction) {
-      const slider = document.getElementById("projectSlider");
-      const scrollAmount = 320;
-      slider.scrollBy({
-        left: direction * scrollAmount,
-        behavior: "smooth"
-      });
-    }
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      breakpoints: {
+        640: { slidesPerView: 1.2 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
   </script>
 </body>
 </html>
