@@ -169,3 +169,44 @@ footer {
   color: #555;
   border-top: 1px solid #c0dcf5;
 }
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-btn {
+  background: #0066cc;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: #004d99;
+}
+
+.projekti {
+  min-width: 280px;
+  max-width: 280px;
+  flex: 0 0 auto;
+}

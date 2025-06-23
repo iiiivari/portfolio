@@ -29,9 +29,14 @@
   <main>
     <section id="projektit">
       <h2>Projektit</h2>
-      <div class="projekti">
-        <h3>Projekti 1</h3>
-        <p>Kuvaus projektista. Voit lisätä linkin tai kuvan.</p>
+      <div class="slider-container">
+        <button class="slider-btn left" onclick="scrollSlider(-1)">←</button>
+        <div class="slider" id="projectSlider">
+          <div class="projekti">Projekti 1</div>
+          <div class="projekti">Projekti 2</div>
+          <div class="projekti">Projekti 3</div>
+        </div>
+        <button class="slider-btn right" onclick="scrollSlider(1)">→</button>
       </div>
     </section>
   </main>
@@ -39,5 +44,16 @@
   <footer>
     <p>&copy; 2025 [Nimesi]</p>
   </footer>
+
+  <script>
+    function scrollSlider(direction) {
+      const slider = document.getElementById("projectSlider");
+      const scrollAmount = 300;
+      slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  </script>
 </body>
 </html>
