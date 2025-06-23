@@ -2,75 +2,60 @@
 <html lang="fi">
 <head>
   <meta charset="UTF-8">
-  <title>Swiper Slider</title>
+  <title>Portfolio – Projektit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="slider-swiper-section">
-    <h2>Projektini</h2>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200/111111/ffffff?text=Projekti+1" alt="Projekti 1">
-            <div class="card-info">
-              <h3>Projekti 1</h3>
-              <p>Verkkosivujen konsepti</p>
-            </div>
+  <section class="slider-section">
+    <div class="slider-header">
+      <h2>Projektit</h2>
+      <div class="nav-buttons">
+        <button class="slider-btn" onclick="scrollSlider(-1)">&#10094;</button>
+        <button class="slider-btn" onclick="scrollSlider(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="slider-container">
+      <div class="slider" id="projectSlider">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200/000000/ffffff?text=Projekti+1" alt="Projekti 1">
+          <div class="card-info">
+            <div class="stars">★★★★★</div>
+            <h3>Blake Star</h3>
+            <p>COO, blackstar.com</p>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200/222222/ffffff?text=Projekti+2" alt="Projekti 2">
-            <div class="card-info">
-              <h3>Projekti 2</h3>
-              <p>UI-suunnittelu</p>
-            </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200/cccc33/000000?text=Projekti+2" alt="Projekti 2">
+          <div class="card-info">
+            <div class="stars">★★★★★</div>
+            <h3>David Gilmore</h3>
+            <p>CTO, darkside.ai</p>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200/333333/ffffff?text=Projekti+3" alt="Projekti 3">
-            <div class="card-info">
-              <h3>Projekti 3</h3>
-              <p>Portfolio-kehitys</p>
-            </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200/444444/ffffff?text=Projekti+3" alt="Projekti 3">
+          <div class="card-info">
+            <div class="stars">★★★★★</div>
+            <h3>Gerard White</h3>
+            <p>COO, exo4emo.ai</p>
           </div>
         </div>
       </div>
-
-      <!-- Nuolinapit -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- Sivunapit -->
-      <div class="swiper-pagination"></div>
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      breakpoints: {
-        640: { slidesPerView: 1.2 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-      }
-    });
+    function scrollSlider(direction) {
+      const slider = document.getElementById("projectSlider");
+      const scrollAmount = 320;
+      slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+      });
+    }
   </script>
 </body>
 </html>

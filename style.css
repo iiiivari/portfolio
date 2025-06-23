@@ -1,24 +1,64 @@
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f7f9fc;
-  color: #111;
+  background: #fcfcfd;
+  color: #222;
 }
 
-.slider-swiper-section {
+.slider-section {
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 50px auto;
   padding: 0 20px;
 }
 
-.slider-swiper-section h2 {
-  font-size: 2rem;
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
+.slider-header h2 {
+  font-size: 1.8rem;
+}
+
+.nav-buttons .slider-btn {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+.slider-btn:hover {
+  background: #f0f0f0;
+}
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
 .card {
+  flex: 0 0 auto;
+  width: 280px;
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -27,7 +67,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .card img {
@@ -40,17 +80,17 @@ body {
   padding: 15px;
 }
 
+.card-info .stars {
+  color: #f5a623;
+  font-size: 1.2rem;
+}
+
 .card-info h3 {
-  margin: 0 0 8px;
+  margin: 8px 0 4px;
 }
 
 .card-info p {
   margin: 0;
   font-size: 0.9rem;
-  color: #555;
-}
-
-/* Swiper override tweaks */
-.swiper {
-  padding-bottom: 40px;
+  color: #666;
 }
