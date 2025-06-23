@@ -2,50 +2,48 @@
 <html lang="fi">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio – Projektit</title>
+  <title>Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Etusivu</a>
+      <a href="about.html">Tietoa minusta</a>
+      <a href="#projektit">Projektit</a>
+    </nav>
+  </header>
 
-  <section class="slider-section">
-    <div class="slider-header">
-      <h2>Projektit</h2>
-      <div class="nav-buttons">
-        <button class="slider-btn" onclick="scrollSlider(-1)">&#10094;</button>
-        <button class="slider-btn" onclick="scrollSlider(1)">&#10095;</button>
-      </div>
-    </div>
-
-    <div class="slider-container">
-      <div class="slider" id="projectSlider">
-        <div class="card">
-          <img src="https://via.placeholder.com/300x200/000000/ffffff?text=Projekti+1" alt="Projekti 1">
-          <div class="card-info">
-            <div class="stars">★★★★★</div>
-            <h3>Blake Star</h3>
-            <p>COO, blackstar.com</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/300x200/cccc33/000000?text=Projekti+2" alt="Projekti 2">
-          <div class="card-info">
-            <div class="stars">★★★★★</div>
-            <h3>David Gilmore</h3>
-            <p>CTO, darkside.ai</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/300x200/444444/ffffff?text=Projekti+3" alt="Projekti 3">
-          <div class="card-info">
-            <div class="stars">★★★★★</div>
-            <h3>Gerard White</h3>
-            <p>COO, exo4emo.ai</p>
-          </div>
-        </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1><span>Luon</span> itselleni tulevaisuuden portfolion</h1>
+      <p>Tämä on oma pieni verkkonäyttelyni. Kokeilen, opin ja kehityn.</p>
+      <div class="buttons">
+        <a href="#projektit" class="btn">Katso projektit</a>
+        <a href="about.html" class="btn secondary">Tietoa minusta</a>
       </div>
     </div>
   </section>
+
+  <main>
+    <section id="projektit">
+      <h2>Projektit</h2>
+      <div class="slider-container">
+        <button class="slider-btn left" onclick="scrollSlider(-1)">←</button>
+        <div class="slider" id="projectSlider">
+          <div class="projekti"><h3>Projekti 1</h3><p>Lyhyt kuvaus projektista.</p></div>
+          <div class="projekti"><h3>Projekti 2</h3><p>Toinen esimerkki projekti.</p></div>
+          <div class="projekti"><h3>Projekti 3</h3><p>Lisää oma projektisi tähän.</p></div>
+        </div>
+        <button class="slider-btn right" onclick="scrollSlider(1)">→</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 [Nimesi]</p>
+  </footer>
 
   <script>
     function scrollSlider(direction) {
