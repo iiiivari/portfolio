@@ -98,20 +98,18 @@
       }
     });
 
-    // Scroll background effect
-    const sections = document.querySelectorAll("section[data-color]");
-    const body = document.body;
-
+    // Scroll background color change
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const color = entry.target.getAttribute("data-color");
-          body.style.backgroundColor = color;
+          document.body.style.backgroundColor = entry.target.dataset.color;
         }
       });
     }, { threshold: 0.5 });
 
-    sections.forEach(section => observer.observe(section));
+    document.querySelectorAll("section[data-color]").forEach(section => {
+      observer.observe(section);
+    });
   </script>
 </body>
 </html>
